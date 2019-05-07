@@ -62,9 +62,7 @@ class SocketExample {
                 break;
             }
             client.println(msg);
-
-            System.out.println("Got the following message from the server:");
-            System.out.println(client.readLine());
+            System.out.println("客户端接收信息：" + client.readLine());
         }
 
     }

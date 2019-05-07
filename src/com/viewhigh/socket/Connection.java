@@ -13,7 +13,7 @@ public class Connection {
     }
 
     public void println(String message) {
-        System.out.println("这里是Connection");
+//        System.out.println("这里是Connection");
         PrintWriter writer;
         try {
             writer = new PrintWriter(new OutputStreamWriter(
