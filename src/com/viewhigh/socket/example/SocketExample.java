@@ -39,7 +39,7 @@ class SocketExample {
 
         System.out.println("When type stop and press enter to close the server...");
         while (true){
-            msg = inputScanner.next();
+            msg = inputScanner.nextLine();
             if ("stop".equalsIgnoreCase(msg)){
                 System.out.println("stop server...");
                 server.close();
@@ -55,7 +55,7 @@ class SocketExample {
 
         while(true){
             System.out.println("when type stop and enter to close this client or type something to send to the server...");
-            msg = inputScanner.next();
+            msg = inputScanner.nextLine();
             if ("stop".equalsIgnoreCase(msg)){
                 System.out.println("stop client...");
                 client.close();
