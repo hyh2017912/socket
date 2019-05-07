@@ -1,4 +1,4 @@
-package com.areong.socket;
+package com.viewhigh.socket;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -28,7 +28,7 @@ class ListeningThread extends Thread {
                 break;
             }
 
-            // Remove not running connection threads.
+            // 移除失效连接，Vector容器特点，不适用迭代，不在遍历中移除
             for (ConnectionThread connectionThread : connectionThreads) {
                 if (!connectionThread.isRunning()) {
                     notRunningConnectionThreads.addElement(connectionThread);

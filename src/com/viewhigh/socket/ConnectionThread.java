@@ -1,4 +1,4 @@
-package com.areong.socket;
+package com.viewhigh.socket;
 
 import java.io.BufferedReader;
 import java.io.IOException;

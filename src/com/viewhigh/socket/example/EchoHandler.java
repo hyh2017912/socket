@@ -1,7 +1,7 @@
-package com.areong.socket.example;
+package com.viewhigh.socket.example;
 
-import com.areong.socket.Connection;
-import com.areong.socket.MessageHandler;
+import com.viewhigh.socket.Connection;
+import com.viewhigh.socket.MessageHandler;
 
 class EchoHandler implements MessageHandler {
     @Override

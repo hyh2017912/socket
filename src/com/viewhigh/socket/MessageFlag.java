@@ -1,4 +1,4 @@
-package com.areong.socket;
+package com.viewhigh.socket;
 
 public class MessageFlag {
     public static final String pureMessage = "0";

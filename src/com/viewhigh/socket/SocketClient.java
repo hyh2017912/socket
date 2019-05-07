@@ -1,4 +1,4 @@
-package com.areong.socket;
+package com.viewhigh.socket;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -26,6 +26,7 @@ public class SocketClient {
             writer = new PrintWriter(new OutputStreamWriter(
                                      socket.getOutputStream()), true);
             writer.println(MessageFlag.pureMessage + message);
+            System.out.println(MessageFlag.pureMessage + message);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

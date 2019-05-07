@@ -1,14 +1,18 @@
-package com.areong.socket;
+package com.viewhigh.socket;
 
 import java.io.IOException;
 import java.net.ServerSocket;
-import java.util.ArrayList;
 
 public class SocketServer {
     private ServerSocket serverSocket;
     private ListeningThread listeningThread;
     private MessageHandler messageHandler;
 
+    /**
+     * 创建一个服务端应用
+     * @param port 端口
+     * @param handler 信息处理器
+     */
     public SocketServer(int port, MessageHandler handler) {
         messageHandler = handler;
         try {
@@ -36,7 +40,7 @@ public class SocketServer {
         try {
             if (serverSocket != null && !serverSocket.isClosed()) {
                 listeningThread.stopRunning();
-                listeningThread.suspend();
+                listeningThread.suspend(); // TODO 使用interepute 终端标识
                 listeningThread.stop();
 
                 serverSocket.close();

@@ -1,4 +1,4 @@
-package com.areong.socket;
+package com.viewhigh.socket;
 
 import java.net.Socket;
 import java.io.IOException;
@@ -13,6 +13,7 @@ public class Connection {
     }
 
     public void println(String message) {
+        System.out.println("这里是Connection");
         PrintWriter writer;
         try {
             writer = new PrintWriter(new OutputStreamWriter(
