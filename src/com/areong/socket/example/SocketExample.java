@@ -13,7 +13,7 @@ class SocketExample {
 
     /**
      * @param args
-     * @throws IOException 
+     * @throws IOException
      */
     public static void main(String[] args) throws IOException {
         // Start as a server or a client.
@@ -24,40 +24,55 @@ class SocketExample {
         System.out.println("  others: close the program.");
         String input = inputScanner.next();
         switch (input) {
-        case "0":
-            startServer();
-            break;
-        case "1":
-            startClient();
-            break;
-        default:
-            break;
+            case "0":
+                startServer();
+                break;
+            case "1":
+                startClient();
+                break;
+            default:
+                break;
         }
         inputScanner.close();
     }
 
     private static void startServer() {
+        String stopFlag;
         System.out.println("Start a server.");
         SocketServer server = new SocketServer(5556, new EchoHandler());
 
-        System.out.println("Please type anything and press enter to close the server...");
-        inputScanner.next();
-        server.close();
+        System.out.println("When type stop and press enter to close the server...");
+        while (true){
+            stopFlag = inputScanner.next();
+            if ("stop".equalsIgnoreCase(stopFlag)){
+                System.out.println("stop server...");
+                server.close();
+                break;
+            }
+        }
     }
 
     private static void startClient() throws UnknownHostException {
+        String stopFlag;
         System.out.println("Start a client.");
         SocketClient client = new SocketClient(InetAddress.getLocalHost(), 5556);
 
-        System.out.println("Please type something to send to the server...");
-        String string = inputScanner.next();
-        client.println(string);
+//        System.out.println("Please type stop and press enter to close the client...");
+        while(true){
+            System.out.println("when type stop and enter to close this client or type something to send to the server...");
+            stopFlag = inputScanner.next();
+            if ("stop".equalsIgnoreCase(stopFlag)){
+                System.out.println("stop client...");
+                client.close();
+                break;
+            }
+//            System.out.println("Please type something to send to the server...");
+//            stopFlag = inputScanner.next();
+            client.println(stopFlag);
 
-        System.out.println("Got the following message from the server:");
-        System.out.println(client.readLine());
+            System.out.println("Got the following message from the server:");
+            System.out.println(client.readLine());
+        }
 
-        System.out.println("Please type anything and press enter to close the client...");
-        inputScanner.next();
-        client.close();
     }
 }

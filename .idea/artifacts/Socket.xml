@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Socket">
+    <output-path>$PROJECT_DIR$/classes/artifacts/Socket</output-path>
+    <root id="root">
+      <element id="archive" name="Socket.jar">
+        <element id="module-output" name="Socket" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
