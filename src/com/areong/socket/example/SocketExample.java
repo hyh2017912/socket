@@ -53,7 +53,6 @@ class SocketExample {
         System.out.println("Start a client.");
         SocketClient client = new SocketClient(InetAddress.getLocalHost(), 5556);
 
-//        System.out.println("Please type stop and press enter to close the client...");
         while(true){
             System.out.println("when type stop and enter to close this client or type something to send to the server...");
             stopFlag = inputScanner.next();
@@ -62,8 +61,6 @@ class SocketExample {
                 client.close();
                 break;
             }
-//            System.out.println("Please type something to send to the server...");
-//            stopFlag = inputScanner.next();
             client.println(stopFlag);
 
             System.out.println("Got the following message from the server:");
